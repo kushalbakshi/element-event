@@ -1,0 +1,25 @@
+{
+    "database.host": "localhost",
+    "database.password": "tutorial",
+    "database.user": "root",
+    "database.port": 3306,
+    "database.reconnect": true,
+    "connection.init_function": null,
+    "connection.charset": "",
+    "loglevel": "INFO",
+    "safemode": true,
+    "fetch_format": "array",
+    "display.limit": 12,
+    "display.width": 14,
+    "display.show_tuple_count": true,
+    "database.use_tls": null,
+    "enable_python_native_blobs": true,
+    "database.ingest_filename_short": "",
+    "database.ingest_filename_full": "",
+    "custom": {
+        "database.prefix": "broz_",
+        "beh_root_dir": [
+            "/Users/cb/Documents/U24_SampleData/workflow_ephys_data/"
+        ]
+    }
+}
