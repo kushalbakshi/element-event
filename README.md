@@ -1,4 +1,4 @@
-# canonical-behavior
+# element-trial-behavior
 This repository is a work in progress. It serves as a draft of a DataJoints element for trial-based behavior for our U24 itiative.
 
 ## Notes:
