@@ -22,8 +22,8 @@ I looked at the structure for `element-array-ephys` for general principle on how
 	 - [ ] Load processed data
    - [ ] Create table definitions
    - [ ] Trigger analysis on raw data import
-- Quality control metrics
-- GitHub Actions for PyPI release
+- [ ] Quality control metrics
+- [ ] GitHub Actions for PyPI release
 - [ ] example workflow
    - [ ] Integration tests with pytest
    - [ ] Tutorials in text format (i.e. Jupyter notebook)
