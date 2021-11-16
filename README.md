@@ -8,19 +8,17 @@ I looked at the structure for `element-array-ephys` for general principle on how
 - [ ] Support functions
    - [ ] Other elements/workflows pull `find_full_path` and `find_root_directory` either from their own `__init__.py` files or from `element-data-loader.utils`. Which is best practice?
    - [ ] `workflow-array-ephys` relies on the linking module for functions to get root and session directories, but the MAP project defines these internally.  Which is best practice?
-- [ ] Table definitions
-   - [ ] Discuss table structure
-	 - [ ] Decide supported filetypes
-      -  [ ] BPOD
-      -  [ ] Kepec standard, TBD
-      -  [ ] Generalizable CSV with user-determined column name to DJ variable name correspondence?
+- [ ] Table definitions: Discuss table structure
+- [ ] Decide supported filetypes
+   -  [ ] BPOD
+   -  [ ] Kepec standard, TBD
+   -  [ ] Generalizable CSV with user-determined column name to DJ variable name correspondence?
 - [ ] Contact the [BPod team](https://github.com/sanworks/)
    - [ ] Already an implementation of loading to Python?
    - [ ] Create joint sustainability roadmap
 - [ ] Contact Kepec team - joint sustainability roadmap
 - [ ] Analysis package
-	 - [ ] Load processed data
-   - [ ] Create table definitions
+   - [ ] Load processed data to table structure
    - [ ] Trigger analysis on raw data import
 - [ ] Quality control metrics
 - [ ] GitHub Actions for PyPI release
