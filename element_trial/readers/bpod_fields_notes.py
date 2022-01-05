@@ -22,4 +22,82 @@ TrialSettings is also file-specific:
 	TP24_ TrialSettings: Aud_Levels, Aud_NoEvidence, Aud_Ramp, Aud_SamplingRate, Aud_ToneDuration, Aud_ToneOverlap, Aud_UseMiddleOctave, Aud_Volume, Aud_maxFreq, Aud_minFreq, Aud_nFreq, AuditoryAlpha, AuditoryStimulusTime, AuditoryStimulusType, BlockTable, CatchError, ChoiceDeadLine, FeedbackDelay, FeedbackDelayDecr, FeedbackDelayGrace, FeedbackDelayIncr, FeedbackDelayMax, FeedbackDelayMin, FeedbackDelaySelection, FeedbackDelayTau, ITI, IncorrectChoiceFeedbackType, LaserFeedback, LaserITI, LaserMov, LaserPreStim, LaserPulseDuration_ms, LaserRew, LaserStim, LaserStimFreq, LaserTimeInvestment, LaserTrainDuration_ms, LaserTrainRandStart, LaserTrainStartMax_s, LaserTrainStartMin_s, LaserTrials, LeftBiasAud, MaxSessionTime, MinSampleAud, MinSampleAudAutoincrement, MinSampleAudDecr, MinSampleAudIncr, MinSampleAudMax, MinSampleAudMin, OdorA_bank, OdorB_bank, OdorStimulusTimeMin, OdorTable, Percent50Fifty, PercentAuditory, PercentCatch, PortLEDs, Ports_LMR, RewardAmount, ShowFeedback, ShowFix, ShowPsycAud, ShowPsycOlf, ShowST, ShowTrialRate, ShowVevaiometric, SkippedFeedbackFeedbackType, StartEasyTrials, StimDelay, StimDelayAutoincrement, StimDelayDecr, StimDelayIncr, StimDelayMax, StimDelayMin, SumRates, TimeOutBrokeFixation, TimeOutEarlyWithdrawal, TimeOutIncorrectChoice, TimeOutSkippedFeedback, TrialSelection, VevaiometricMinWT, VevaiometricNBin, VevaiometricShowPoints, Wire1VideoTrigger
 
 TrialTypes: array of condition? Not consistent across all trials
+
+['SessionData'].RawEvents.Trial[0].States
+BalbC_Ph_W1_LH_Randdelay_changeover_Aug08_2021_Session1.mat
+RawEvents
+RawData
+
+Bonn bpod SessionData structure
+	TrialTypes - 1,2,3,1,2,3
+	TrialTypeNames - Visibile,Visible,Fading
+	Info
+		StateMachineVersion
+		SessionDate
+		SessionStartTime_UTC
+		SessionStartTime_MATLAB
+	nTrials (# trials in session, here 54)
+	RawEvents (timestamps for each trial's state transitions/recorded events)
+		Trial{1,n}.States #Which of these are important?
+			WaitForPosTriggerSoftCode
+			CueDelay
+			WaitForResponse
+			Port2RewardDelay
+			Port2Reward
+			CloseValves
+			Drinking
+			Port1RewardDelay
+			Port3RewardDelay
+			Port4RewardDelay
+			Port5RewardDelay
+			Port6RewardDelay
+			Port7RewardDelay
+			Port8RewardDelay
+			Port1Reward
+			Port3Reward
+			Port4Reward
+			Port5Reward
+			Port6Reward
+			Port7Reward
+			Port8Reward
+			Punish
+			Punishexit
+			EarlyWithdrawal
+		Trial{1,n}.Events
+			Port4In
+			Port4Out
+			SoftCode10
+			Tup
+			Port2In
+			Port2Out
+	RawData (copy of raw data from state machine)
+	TrialStartTimestamp (time when trial started on Bpod's clock)
+		Note: Timestamps in RawEvents are relative to each trial's start
+	TrialEndTimestamp
+	SettingsFile (the settings file you selected in the launch manager)
+	Notes
+	MarkerCodes
+	CurrentSubjectName
+	TrialSettings
+		GUI
+		GUIMeta
+		GUIPanels
+		polling
+		debug
+		debugvis
+		Data
+		arm_number
+		arm_baited_orig
+		arm_baited
+		SF
+		rotation
+		position
+		StimAlpha
+	StimPos
+		TriggerLocPix
+		TriggerLocOptitrackHitbox
+		TriggerLocOptitrackCenter
+		TriggerLocOptitrackCircleHitRadius
+		tform
+'''
 '''
