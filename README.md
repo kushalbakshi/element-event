@@ -3,6 +3,8 @@ This repository is a work in progress not yet ready for public release.
 It serves as a draft of a DataJoint element for trialized experiments behavior
 for our U24 itiative.
 
+Work in progress.
+
 ## Schemas
 `trial` should be activated if all events are tied to specific trials.
 `event` should be activated if events occur independently of trials.
