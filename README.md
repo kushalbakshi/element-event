@@ -49,7 +49,6 @@ We previously discussed also supporing a univariate csv format that would
 contain 4 values: timestamp on, timestamp off, data type and value. This has
 not yet been implemented.
 
-
 ## To do:
 - [X] Support functions
    - [X] Pull `find_full_path` and `find_root_directory` from `element-data-loader.utils`.
@@ -67,8 +66,7 @@ not yet been implemented.
    - [X] Already an implementation of loading to Python - No
    - [X] Create joint sustainability roadmap - Unlikely
 - [ ] Analysis package
-	 - [ ] Load processed data
-   - [ ] Create table definitions
+   - [ ] Load processed data to table structure
    - [ ] Trigger analysis on raw data import
 - [ ] Quality control metrics
 - [ ] GitHub Actions for PyPI release
@@ -100,5 +98,3 @@ Install `element-data-loader`
 ```
 element-data-loader @ git+https://github.com/datajoint/element-data-loader
 ```
-
-
