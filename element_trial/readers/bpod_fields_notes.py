@@ -100,4 +100,3 @@ Bonn bpod SessionData structure
 		TriggerLocOptitrackCircleHitRadius
 		tform
 '''
-'''
