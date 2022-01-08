@@ -20,8 +20,8 @@ event table.
 MATLAB is the only officially supported environment. SciPy has a lot of support
 for loading matlab files. In the current draft, SciPy is used to import Bpod
 .mat files as embedded dictionaries. Micheal Wulf shared the Bpod files that
-are currently in `workflow-trial/user_data/Bpod_files` as a diverse set of
-examples.
+are currently available via djarchive as `workflow-trial`, revision 0.0.0b1.
+They were shared as a diverse set of examples.
 
 Under `element_trial/readers/`, there are two files: `Bpod.py` and
 `Bpod_fields_notes.py`. The former is a draft of an eventual reader that could
