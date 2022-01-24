@@ -6,6 +6,6 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 ### Added
 + First beta release
 
-## [0.1.0c0] - 2021-11-15
+## [0.1.0a0] - 2021-11-15
 ### Added
 + First draft begins
