@@ -1,6 +1,16 @@
-'''Temporary file for keeping track of bpod structures
+# Trial Behavior Element
 
-The RAW prefix in bpod structures seems to always have data elsewhere
+## Pipeline Development
+Initial Element development began in December of 2021 in discussion with the team led 
+by Adam Kepecs at Washington University School of Medicine in St. Louis. Micheal Wulf 
+has been instrumental our understanding of the diversity of Bpod files. DataJoint provides
+a diverse set of bpod examples via [DJArchive](https://github.com/datajoint/djarchive-client/).
+
+<details>
+<summary>Click to expand notes on the organization of these files</summary>
+
+```
+The RAW prefix in bpod structures always has data elsewhere
     Raw is where it is initially stored, and then ported elsewhere during export
 
 Inconsistent across examples:
@@ -108,15 +118,8 @@ TrialSettings is also file-specific:
                          TimeOutEarlyWithdrawal, TimeOutIncorrectChoice,
                          TimeOutSkippedFeedback, TrialSelection, VevaiometricMinWT,
                          VevaiometricNBin, VevaiometricShowPoints, Wire1VideoTrigger
-
-TrialTypes: array of condition? Not consistent across all trials
-
-['SessionData'].RawEvents.Trial[0].States
-BalbC_Ph_W1_LH_Randdelay_changeover_Aug08_2021_Session1.mat
-RawEvents
-RawData
-
-Bonn bpod SessionData structure
+                         
+Alternate SessionData structure
     TrialTypes - 1,2,3,1,2,3
     TrialTypeNames - Visibile,Visible,Fading
     Info
@@ -187,4 +190,5 @@ Bonn bpod SessionData structure
         TriggerLocOptitrackCenter
         TriggerLocOptitrackCircleHitRadius
         tform
-'''
+```
+</details>
