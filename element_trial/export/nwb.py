@@ -12,11 +12,6 @@ def trial_to_nwb(trial_key):
 
 """ From CHEN 2017 https://github.com/vathes/DJ-NWB-Chen-2017
 
-
-# ===========================================================================
-# ============================= BEHAVIOR TRIALS =============================
-# ===========================================================================
-
 # =============== TrialSet ====================
 # NWB 'trial' (of type dynamic table) by default comes with three mandatory
 # attributes: 'start_time' and 'stop_time'. Other trial-related information
