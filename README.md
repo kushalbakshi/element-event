@@ -59,4 +59,4 @@ help(trial.activate)
 
 ### Example usage
 
-See [this project](https://github.com/datajoint/workflow-trial) for an example usage of this Array Electrophysiology Element.
+See [this project](https://github.com/datajoint/workflow-trial) for an example usage of this Trial Element.

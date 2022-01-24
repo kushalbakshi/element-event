@@ -2,7 +2,7 @@ import datajoint as dj
 import inspect
 import importlib
 import pathlib
-from element_data_loader.utils import find_full_path
+from element_interface.utils import find_full_path
 from .readers import bpod
 
 schema = dj.schema()
