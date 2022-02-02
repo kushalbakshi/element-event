@@ -1,9 +1,9 @@
 # Trial Behavior Element
 
 ## Pipeline Development
-Initial Element development began in December of 2021 in discussion with the team led 
-by Adam Kepecs at Washington University School of Medicine in St. Louis. Micheal Wulf 
-has been instrumental our understanding of the diversity of Bpod files. DataJoint provides
+This Element was developed from a series of existing projects featuring trialized
+behavior. Micheal Wulf at Washington University School of Medicine in St. Louis has
+been instrumental our understanding of the diversity of Bpod files. DataJoint provides
 a diverse set of bpod examples via [DJArchive](https://github.com/datajoint/djarchive-client/).
 
 <details>
