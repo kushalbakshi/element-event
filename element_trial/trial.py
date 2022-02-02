@@ -155,16 +155,16 @@ class BehaviorTrial(dj.Imported):
 @schema
 class BehaviorRecording(dj.Imported):
     definition = """
-    -> session.SessionDirectory
+    -> Session
     recording_id: varchar(16)
     ---
     recording_notes: varchar(256)
     """
 
-    class BehFile(dj.Part):
+    class BehaviorFile(dj.Part):
         definition = """
         -> master
-        filetype: varchar(16)
+        filepath: varchar(16)
         """
 
     def make(self, key):
