@@ -17,10 +17,10 @@ that models combining this Element with the corresponding
 
 ### Trial Schema
 
-![trial schema](images/attached_trial_element_trialized.svg)
+![trial schema](./images/attached_trial_element_trialized.svg)
 
 ### Event Schema
-![event schema](images/attached_trial_element_events.svg)
+![event schema](./images/attached_trial_element_events.svg)
 
 ## Installation
 
@@ -63,7 +63,3 @@ from element_trial import event, trial
 help(event.activate)
 help(trial.activate)
 ```
-
-### Example usage
-
-See [this project](https://github.com/datajoint/workflow-trial) for an example usage of this Trial Element.
