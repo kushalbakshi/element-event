@@ -6,21 +6,21 @@ for our U24 itiative.
 ## Element architecture
 
 In both of the following diagrams, the trial element starts immediately downstream from
-***Session***. In one case, Sessions are first segmented into trials, and then aaa
+***Session***. In one case, Sessions are first segmented into trials, and then 
 segmented into events. This might be appropriate, for example, in a paradigm with 
 repeated conditions and response behaviors associated with different conditions. In the 
-next, Sessions are directly upstream from Events. This might be appropropriate for a
-paradigm that recorded events within naturalistic free behavior. We  provide an
+next, Sessions are directly upstream from both Trials and Events. This might be appropropriate for a paradigm that recorded events within naturalistic free behavior. We  provide an
 [example workflow](https://github.com/datajoint/workflow-trial/) with a
 [pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py)
 that models combining this Element with the corresponding 
 [Element-Session](https://github.com/datajoint/element-session).
 
+### Trial Schema
 
-<!---
-![element-trial diagram](images/attached_trial_element_trialized.svg)
-![element-trial diagram](images/attached_trial_element_events.svg)
--->
+![trial schema](images/attached_trial_element_trialized.svg)
+
+### Event Schema
+![event schema](images/attached_trial_element_events.svg)
 
 ## Installation
 
