@@ -3,13 +3,18 @@ This repository is a work in progress not yet ready for public release.
 It serves as a draft of a DataJoint element for trialized experiments behavior
 for our U24 itiative.
 
-Work in progress.
-
 ## Element architecture
 
-In both of the following diagrams, the trial element starts immediately downstream from ***Session***. In one case, Sessions are first segmented into trials, and then segmented into events. This might be appropriate, for example, in a paradigm with repeated conditions and response behaviors associated with different conditions. In the next, Sessions are directly upstream from Events. This might be appropropriate for a paradigm that recorded events within naturalistic free behavior.
-We  provide an [example workflow](https://github.com/datajoint/workflow-trial/) with a
-[pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py) that models combining this Element with the corresponding [Element-Session](https://github.com/datajoint/element-session).
+In both of the following diagrams, the trial element starts immediately downstream from
+***Session***. In one case, Sessions are first segmented into trials, and then aaa
+segmented into events. This might be appropriate, for example, in a paradigm with 
+repeated conditions and response behaviors associated with different conditions. In the 
+next, Sessions are directly upstream from Events. This might be appropropriate for a
+paradigm that recorded events within naturalistic free behavior. We  provide an
+[example workflow](https://github.com/datajoint/workflow-trial/) with a
+[pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py)
+that models combining this Element with the corresponding 
+[Element-Session](https://github.com/datajoint/element-session).
 
 
 <!---
@@ -32,7 +37,8 @@ We  provide an [example workflow](https://github.com/datajoint/workflow-trial/) 
 <!---
 + Install `element-interface`
 
-    + `element-interface` is a dependency of `element-trial`, however it is not contained within `requirements.txt`.
+    + `element-interface` is a dependency of `element-trial`, however it is not 
+      contained within `requirements.txt`.
 
     ```
     pip install "element-interface @ git+https://github.com/datajoint/element-interface"
@@ -46,9 +52,10 @@ We  provide an [example workflow](https://github.com/datajoint/workflow-trial/) 
 To activate the `element-trial`, one need to provide:
 
 1. Schema names for the event or trial module
-
-2. Upstream Session table: A set of keys identifying a recording session (see [Element-Session](https://github.com/datajoint/element-session)).
-3. Utility functions. See example definitions here](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/paths...
+2. Upstream Session table: A set of keys identifying a recording session (see [
+Element-Session](https://github.com/datajoint/element-session)).
+3. Utility functions. See 
+[example definitions here](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/paths.py)
 
 For more detail, check the docstring of the `element-trial`:
 ```python
