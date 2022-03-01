@@ -17,10 +17,10 @@ that models combining this Element with the corresponding
 
 ### Trial Schema
 
-![trial schema](./images/attached_trial_element_trialized.svg)
+![trial schema](./images/diagram_trial.svg)
 
 ### Event Schema
-![event schema](./images/attached_trial_element_events.svg)
+![event schema](./images/diagram_event.svg)
 
 ## Installation
 
