@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="436pt" height="240pt" viewBox="0.00 0.00 435.50 240.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 236)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-236 431.5,-236 431.5,4 -4,4"/>
+<!-- trial.TrialType -->
+<g id="node1" class="node">
+<title>trial.TrialType</title>
+<g id="a_node1"><a xlink:title="trial_type           ------------------------------trial_type_description ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="transparent" points="216.5,-232 141.5,-232 141.5,-197 216.5,-197 216.5,-232"/>
+<text text-anchor="start" x="149.5" y="-213" font-family="arial" text-decoration="underline" font-size="10.00">trial.TrialType</text>
+</a>
+</g>
+</g>
+<!-- trial.Trial -->
+<g id="node9" class="node">
+<title>trial.Trial</title>
+<g id="a_node9"><a xlink:title="→ session.Sessiontrial                ------------------------------→ trial.TrialTypestart_time           stop_time            ">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="179" cy="-143.5" rx="38.5" ry="17.5"/>
+<text text-anchor="start" x="156" y="-141.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.Trial</text>
+</a>
+</g>
+</g>
+<!-- trial.TrialType&#45;&gt;trial.Trial -->
+<g id="edge1" class="edge">
+<title>trial.TrialType-&gt;trial.Trial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M179,-196.8C179,-185.95 179,-171.87 179,-161.05"/>
+</g>
+<!-- session.Session -->
+<g id="node2" class="node">
+<title>session.Session</title>
+<g id="a_node2"><a xlink:title="→ subject.Subjectsession_datetime     ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="365,-232 261,-232 261,-197 365,-197 365,-232"/>
+<text text-anchor="start" x="269" y="-212.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">session.Session</text>
+</a>
+</g>
+</g>
+<!-- trial.BehaviorRecording -->
+<g id="node8" class="node">
+<title>trial.BehaviorRecording</title>
+<g id="a_node8"><a xlink:title="→ session.Sessionrecording_id         ------------------------------recording_notes      ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="411.5,-161 268.5,-161 268.5,-126 411.5,-126 411.5,-161"/>
+<text text-anchor="start" x="276.5" y="-141.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">trial.BehaviorRecording</text>
+</a>
+</g>
+</g>
+<!-- session.Session&#45;&gt;trial.BehaviorRecording -->
+<g id="edge2" class="edge">
+<title>session.Session-&gt;trial.BehaviorRecording</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M319.54,-196.8C323.78,-185.95 329.29,-171.87 333.52,-161.05"/>
+</g>
+<!-- session.Session&#45;&gt;trial.Trial -->
+<g id="edge3" class="edge">
+<title>session.Session-&gt;trial.Trial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M280.9,-196.97C257.21,-184.77 225.44,-168.41 203.71,-157.22"/>
+</g>
+<!-- trial.Event.EventVariable -->
+<g id="node3" class="node">
+<title>trial.Event.EventVariable</title>
+<g id="a_node3"><a xlink:title="→ trial.Eventvariable_name        ------------------------------variable_value       ">
+<polygon fill="transparent" stroke="transparent" points="124,-19 0,-19 0,0 124,0 124,-19"/>
+<text text-anchor="start" x="8" y="-8" font-family="arial" text-decoration="underline" font-size="10.00">trial.Event.EventVariable</text>
+</a>
+</g>
+</g>
+<!-- trial.BehaviorRecording.BehaviorFile -->
+<g id="node4" class="node">
+<title>trial.BehaviorRecording.BehaviorFile</title>
+<g id="a_node4"><a xlink:title="→ trial.BehaviorRecordingfilepath             ">
+<polygon fill="transparent" stroke="transparent" points="427.5,-82 252.5,-82 252.5,-63 427.5,-63 427.5,-82"/>
+<text text-anchor="start" x="260.5" y="-71" font-family="arial" text-decoration="underline" font-size="10.00">trial.BehaviorRecording.BehaviorFile</text>
+</a>
+</g>
+</g>
+<!-- trial.Event -->
+<g id="node5" class="node">
+<title>trial.Event</title>
+<g id="a_node5"><a xlink:title="→ trial.Trialevent_start_time     ------------------------------→ trial.EventTypeevent_end_time=null  ">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="62" cy="-72.5" rx="43.5" ry="17.5"/>
+<text text-anchor="start" x="35" y="-70.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.Event</text>
+</a>
+</g>
+</g>
+<!-- trial.Event&#45;&gt;trial.Event.EventVariable -->
+<g id="edge4" class="edge">
+<title>trial.Event-&gt;trial.Event.EventVariable</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M62,-54.83C62,-43.26 62,-28.32 62,-19.08"/>
+</g>
+<!-- trial.EventType -->
+<g id="node6" class="node">
+<title>trial.EventType</title>
+<g id="a_node6"><a xlink:title="event_type           ------------------------------event_type_description=&quot;&quot; ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="transparent" points="103,-161 21,-161 21,-126 103,-126 103,-161"/>
+<text text-anchor="start" x="29" y="-142" font-family="arial" text-decoration="underline" font-size="10.00">trial.EventType</text>
+</a>
+</g>
+</g>
+<!-- trial.EventType&#45;&gt;trial.Event -->
+<g id="edge5" class="edge">
+<title>trial.EventType-&gt;trial.Event</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M62,-125.8C62,-114.95 62,-100.87 62,-90.05"/>
+</g>
+<!-- trial.Trial.TrialVariable -->
+<g id="node7" class="node">
+<title>trial.Trial.TrialVariable</title>
+<g id="a_node7"><a xlink:title="→ trial.Trialvariable_name        ------------------------------variable_value       ">
+<polygon fill="transparent" stroke="transparent" points="234,-82 124,-82 124,-63 234,-63 234,-82"/>
+<text text-anchor="start" x="132" y="-71" font-family="arial" text-decoration="underline" font-size="10.00">trial.Trial.TrialVariable</text>
+</a>
+</g>
+</g>
+<!-- trial.BehaviorRecording&#45;&gt;trial.BehaviorRecording.BehaviorFile -->
+<g id="edge6" class="edge">
+<title>trial.BehaviorRecording-&gt;trial.BehaviorRecording.BehaviorFile</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M340,-125.8C340,-112.08 340,-93.19 340,-82.27"/>
+</g>
+<!-- trial.Trial&#45;&gt;trial.Event -->
+<g id="edge7" class="edge">
+<title>trial.Trial-&gt;trial.Event</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M156.44,-129.2C136.12,-117.21 106.36,-99.66 85.69,-87.47"/>
+</g>
+<!-- trial.Trial&#45;&gt;trial.Trial.TrialVariable -->
+<g id="edge8" class="edge">
+<title>trial.Trial-&gt;trial.Trial.TrialVariable</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M179,-125.8C179,-112.08 179,-93.19 179,-82.27"/>
+</g>
+</g>
+</svg>

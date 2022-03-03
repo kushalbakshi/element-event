@@ -1,33 +1,65 @@
-# element-trial-behavior
-This repository is a work in progress. It serves as a draft of a DataJoints element for trial-based behavior for our U24 itiative.
+# DataJoint Element - Experimental trials
+This repository is a work in progress not yet ready for public release.
+It serves as a draft of a DataJoint element for trialized experiments behavior
+for our U24 itiative.
 
-## Notes:
-I looked at the structure for `element-array-ephys` for general principle on how to call and load files. I mirrored the main DataJoint implementation as split from 'readers'. I incorporated feedback from project-specific `behavior.py` elsewhere in table development.
+## Element architecture
 
-## To do:
-- [ ] Support functions
-   - [ ] Other elements/workflows pull `find_full_path` and `find_root_directory` either from their own `__init__.py` files or from `element-data-loader.utils`. Which is best practice?
-   - [ ] `workflow-array-ephys` relies on the linking module for functions to get root and session directories, but the MAP project defines these internally.  Which is best practice?
-- [ ] Table definitions: Discuss table structure
-- [ ] Decide supported filetypes
-   -  [ ] BPOD
-   -  [ ] Kepec standard, TBD
-   -  [ ] Generalizable CSV with user-determined column name to DJ variable name correspondence?
-- [ ] Contact the [BPod team](https://github.com/sanworks/)
-   - [ ] Already an implementation of loading to Python?
-   - [ ] Create joint sustainability roadmap
-- [ ] Contact Kepec team - joint sustainability roadmap
-- [ ] Analysis package
-   - [ ] Load processed data to table structure
-   - [ ] Trigger analysis on raw data import
-- [ ] Quality control metrics
-- [ ] GitHub Actions for PyPI release
-- [ ] example workflow
-   - [ ] Integration tests with pytest
-   - [ ] Tutorials in text format (i.e. Jupyter notebook)
-   - [ ] Tutorial in video format
-   - [ ] Docker for tests
-   - [ ] Example dataset(s) for public release, in DJ Archive
-   - [ ] NWB export
-   - [ ] README
-- [ ] RRID
+In both of the following diagrams, the trial table starts immediately downstream from
+***Session***. In one case, Sessions are first segmented into trials, and then 
+segmented into events. This might be appropriate, for example, in a paradigm with 
+repeated conditions and response behaviors associated with different conditions. In the 
+next, Sessions are directly upstream from both Trials and Events. This might be appropropriate for a paradigm that recorded events within naturalistic free behavior. We  provide an
+[example workflow](https://github.com/datajoint/workflow-trial/) with a
+[pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py)
+that models combining this Element with the corresponding 
+[Element-Session](https://github.com/datajoint/element-session).
+
+### Trial Schema
+
+![trial schema](./images/diagram_trial.svg)
+
+### Event Schema
+![event schema](./images/diagram_event.svg)
+
+## Installation
+
++ Install `element-trial`
+    ```
+    pip install element-trial
+    ```
+
++ Upgrade `element-trial` previously installed with `pip`
+    ```
+    pip install --upgrade element-trial
+    ```
+
+<!---
++ Install `element-interface`
+
+    + `element-interface` is a dependency of `element-trial`, however it is not 
+      contained within `requirements.txt`.
+
+    ```
+    pip install "element-interface @ git+https://github.com/datajoint/element-interface"
+    ```
+-->
+
+## Usage
+
+### Element activation
+
+To activate the `element-trial`, one need to provide:
+
+1. Schema names for the event or trial module
+2. Upstream Session table: A set of keys identifying a recording session (see [
+Element-Session](https://github.com/datajoint/element-session)).
+3. Utility functions. See 
+[example definitions here](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/paths.py)
+
+For more detail, check the docstring of the `element-trial`:
+```python
+from element_trial import event, trial
+help(event.activate)
+help(trial.activate)
+```
