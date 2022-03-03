@@ -5,7 +5,7 @@ for our U24 itiative.
 
 ## Element architecture
 
-In both of the following diagrams, the trial element starts immediately downstream from
+In both of the following diagrams, the trial table starts immediately downstream from
 ***Session***. In one case, Sessions are first segmented into trials, and then 
 segmented into events. This might be appropriate, for example, in a paradigm with 
 repeated conditions and response behaviors associated with different conditions. In the 
