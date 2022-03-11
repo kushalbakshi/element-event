@@ -1,4 +1,4 @@
-"""Events are linked directly to session"""
+"""Events are linked to Trials"""
 
 import datajoint as dj
 import inspect
@@ -21,16 +21,16 @@ def activate(schema_name, *, create_schema=True, create_tables=True,
         :param create_tables: when True (default), create tables in the
                               database if they do not yet exist.
         :param linking_module: a module (or name) containing the required
-                               dependencies to activate the `session` element:
+                               dependencies to activate the `event` element:
             Upstream tables:
-                + Session: parent table to ProbeInsertion, typically
+                + Session: parent table to BehaviorRecording, typically
                            identifying a recording session.
             Functions:
-                + get_trial_root_data_dir() -> list
+                + get_experiment_root_data_dir() -> list
                     Retrieve the root data director(y/ies) with behavioral
                     recordings (e.g., bpod files) for all subject/sessions.
                     :return: a string for full path to the root data directory
-                + get_trial_sess_dir(session_key: dict) -> str
+                + get_session_directory(session_key: dict) -> str
                     Retrieve the session directory containing the recording(s)
                     for a given Session
                     :param session_key: a dictionary of one Session `key`
@@ -48,76 +48,33 @@ def activate(schema_name, *, create_schema=True, create_tables=True,
 # -------------- Functions required by the element-trial   ---------------
 
 
-def get_trial_root_data_dir() -> list:
+def get_experiment_root_data_dir() -> list:
     """
     All data paths, directories in DataJoint Elements are recommended to be
     stored as relative paths, with respect to some user-configured "root"
     directory, which varies from machine to machine
 
-    get_trial_root_data_dir() -> list
+    get_experiment_root_data_dir() -> list
         This user-provided function retrieves the list of possible root data
         directories containing the behavioral data for all subjects/sessions
         :return: a string for full path to the behavioral root data directory,
          or list of strings for possible root data directories
     """
-    return _linking_module.get_trial_root_data_dir()
+    return _linking_module.get_experiment_root_data_dir()
 
 
-def get_trial_sess_dir(session_key: dict) -> str:
+def get_session_directory(session_key: dict) -> str:
     """
-    get_trial_sess_dir(session_key: dict) -> str
-        Retrieve the session directory, with all recordings for a given Session
+    get_session_directory(session_key: dict) -> str
+        Retrieve the session directory containing the
+         recorded Neuropixels data for a given Session
         :param session_key: a dictionary of one Session `key`
         :return: a string for full path to the session directory
     """
-    return _linking_module.get_trial_sess_dir(session_key)
+    return _linking_module.get_session_directory(session_key)
+
 
 # ----------------------------- Table declarations ----------------------
-
-
-@schema
-class BehaviorRecording(dj.Manual):
-    definition = """
-    -> Session
-    recording_id    : varchar(16)
-    ---
-    recording_notes : varchar(256)
-    """
-
-    class BehaviorFile(dj.Part):
-        definition = """
-        -> master
-        filepath    : varchar(16)
-        """
-
-
-@schema
-class TrialType(dj.Lookup):
-    definition = """
-    trial_type              : varchar(16)
-    ---
-    trial_type_description  : varchar(256)
-    """
-
-
-@schema
-class Trial(dj.Imported):
-    definition = """
-    -> Session
-    trial      : smallint # trial number (1-based indexing)
-    ---
-    -> TrialType
-    start_time : float  # (second) relative to recording start
-    stop_time  : float  # (second) relative to recording start
-    """
-
-    class TrialVariable(dj.Part):
-        definition = """
-        -> master
-        variable_name: varchar(16)
-        ---
-        variable_value: varchar(2000)
-        """
 
 
 @schema
@@ -130,27 +87,28 @@ class EventType(dj.Lookup):
 
 
 @schema
-class Event(dj.Imported):
-    definition = """ #
+class BehaviorRecording(dj.Manual):
+    definition = """
     -> Session
-    event_start_time   : float  # (second) relative to recording start
     ---
-    -> EventType
-    event_end_time=null: float  # (second) relative to recording start
+    recording_start_time=null: datetime
+    recording_duration=null: float
+    recording_notes : varchar(256)
     """
 
-    class EventVariable(dj.Part):
+    class File(dj.Part):
         definition = """
         -> master
-        variable_name: varchar(16)
-        ---
-        variable_value: varchar(2000)
+        filepath    : varchar(16)
         """
 
 
 @schema
-class TrialEvent(dj.Imported):
+class Event(dj.Imported):
     definition = """
-    -> Trial
-    -> Event
+    -> BehaviorRecording
+    -> EventType
+    event_start_time: decimal(10, 4)  # (second) relative to recording start
+    ---
+    event_end_time=null: float  # (second) relative to recording start
     """
