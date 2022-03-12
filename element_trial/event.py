@@ -112,3 +112,27 @@ class Event(dj.Imported):
     ---
     event_end_time=null: float  # (second) relative to recording start
     """
+
+
+"""
+----- AlignmentEvent -----
+The following `AlignmentEvent` table is designed to provide a mechanism for
+performing event-aligned analyses, such as Peristimulus Time Histogram (PSTH) analysis 
+commonly used in electrophysiology studies.
+One entry in the `AlignmentEvent` table defines an event type to align signal/activity timeseries to.
+"""
+
+
+@schema
+class AlignmentEvent(dj.Manual):
+    definition = """
+    alignment_name: varchar(32)
+    ---
+    alignment_description='': varchar(1000)  
+    -> EventType.proj(alignment_event_type='event_type')  # event type to align to
+    alignment_time_shift: float  # (s) any time-shift amount with respect to the alignment_event_type
+    -> EventType.proj(start_event_type='event_type')  # event type prior to the alignment_event_type to start truncating data
+    start_time_shift: float  # (s) any time-shift amount with respect to the start_event_type
+    -> EventType.proj(end_event_type='event_type')  # event type after the alignment_event_type to end truncating data
+    end_time_shift: float    # (s) any time-shift amount with respect to the end_event_type
+    """
