@@ -35,19 +35,22 @@ def activate(trial_schema_name, event_schema_name, *, create_schema=True, create
     assert inspect.ismodule(linking_module), "The argument 'dependency' must"\
                                              + " be a module or module name"
 
+    global _linking_module
+    _linking_module = linking_module
+
     event.activate(event_schema_name, create_schema=create_schema,
-                   create_tables=create_tables, linking_module=__name__)
+                   create_tables=create_tables, linking_module=_linking_module)
 
     schema.activate(trial_schema_name, create_schema=create_schema,
                     create_tables=create_tables,
-                    add_objects=linking_module.__dict__)
+                    add_objects=_linking_module.__dict__)
 
 # ----------------------------- Table declarations ----------------------
 
 
 @schema
 class Block(dj.Imported):
-    definition = """ Experimental blocks
+    definition = """ # Experimental blocks
     -> event.BehaviorRecording
     block_id : smallint 		# block number (1-based indexing)
     ---
@@ -77,7 +80,7 @@ class TrialType(dj.Lookup):
 class Trial(dj.Imported):
     definition = """  # Experimental trials
     -> event.BehaviorRecording
-    trial_id      : smallint # trial number (1-based indexing)
+    trial_id   : smallint # trial number (1-based indexing)
     ---
     -> TrialType
     trial_start_time : float  # (second) relative to recording start
@@ -94,7 +97,7 @@ class Trial(dj.Imported):
 
 
 @schema
-class BlockTrial(dj.Imported):
+class BlockTrial(dj.Manual):
     definition = """
     -> Block
     -> Trial
