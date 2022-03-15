@@ -51,10 +51,11 @@ class Block(dj.Imported):
     -> event.BehaviorRecording
     block_id : smallint 		# block number (1-based indexing)
     ---
-    block_start_time : decimal(10, 4)  # (s) relative to recording start
+    block_start_time : float  # (s) relative to recording start
+    block_stop_time : float  # (s) relative to recording start
     """
 
-    class BlockAttribute(dj.Part):
+    class Attribute(dj.Part):
         definition = """  # Additional block attributes to fully describe a block
         -> master
         attribute_name: varchar(16)
@@ -68,11 +69,10 @@ class TrialType(dj.Lookup):
     definition = """
     trial_type              : varchar(16)
     ---
-    trial_type_description  : varchar(256)
+    trial_type_description='': varchar(256)
     """
 
-    trial_type_description='' : varchar(256)
-    """
+
 @schema
 class Trial(dj.Imported):
     definition = """  # Experimental trials
@@ -84,7 +84,7 @@ class Trial(dj.Imported):
     trial_stop_time  : float  # (second) relative to recording start
     """
 
-    class TrialAttribute(dj.Part):
+    class Attribute(dj.Part):
         definition = """  # Additional trial attributes to fully describe a trial
         -> master
         attribute_name: varchar(16)
