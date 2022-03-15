@@ -67,7 +67,7 @@ def get_session_directory(session_key: dict) -> str:
     """
     get_session_directory(session_key: dict) -> str
         Retrieve the session directory containing the
-         recorded Neuropixels data for a given Session
+         recorded data for a given Session
         :param session_key: a dictionary of one Session `key`
         :return: a string for full path to the session directory
     """
