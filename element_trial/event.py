@@ -80,9 +80,9 @@ def get_session_directory(session_key: dict) -> str:
 @schema
 class EventType(dj.Lookup):
     definition = """
-    event_type               : varchar(16)
+    event_type                : varchar(16)
     ---
-    event_type_description='': varchar(256)
+    event_type_description='' : varchar(256)
     """
 
 
@@ -91,15 +91,15 @@ class BehaviorRecording(dj.Manual):
     definition = """
     -> Session
     ---
-    recording_start_time=null: datetime
-    recording_duration=null: float
-    recording_notes : varchar(256)
+    recording_start_time=null : datetime
+    recording_duration=null   : float
+    recording_notes=null      : varchar(256)
     """
 
     class File(dj.Part):
         definition = """
         -> master
-        filepath    : varchar(16)
+        filepath              : varchar(64)
         """
 
 
@@ -108,9 +108,9 @@ class Event(dj.Imported):
     definition = """
     -> BehaviorRecording
     -> EventType
-    event_start_time: decimal(10, 4)  # (second) relative to recording start
+    event_start_time          : float  # (second) relative to recording start
     ---
-    event_end_time=null: float  # (second) relative to recording start
+    event_end_time=null       : float  # (second) relative to recording start
     """
 
 
@@ -119,20 +119,25 @@ class Event(dj.Imported):
 The following `AlignmentEvent` table is designed to provide a mechanism for
 performing event-aligned analyses, such as Peristimulus Time Histogram (PSTH) analysis 
 commonly used in electrophysiology studies.
-One entry in the `AlignmentEvent` table defines an event type to align signal/activity timeseries to.
+One entry in the `AlignmentEvent` table defines an event type to align signal/activity
+    timeseries to.
+Start and end event types define the beginning and end of a data window
+time_shift is seconds of adjustment with respect to the alignment variable, or the
+    beginning/end of the window via start/end event types
 """
 
 
 @schema
 class AlignmentEvent(dj.Manual):
-    definition = """
+    definition = """ # time_shift is seconds to shift with respect to (WRT) a variable
     alignment_name: varchar(32)
     ---
     alignment_description='': varchar(1000)  
-    -> EventType.proj(alignment_event_type='event_type')  # event type to align to
-    alignment_time_shift: float  # (s) any time-shift amount with respect to the alignment_event_type
-    -> EventType.proj(start_event_type='event_type')  # event type prior to the alignment_event_type to start truncating data
-    start_time_shift: float  # (s) any time-shift amount with respect to the start_event_type
-    -> EventType.proj(end_event_type='event_type')  # event type after the alignment_event_type to end truncating data
-    end_time_shift: float    # (s) any time-shift amount with respect to the end_event_type
+    -> EventType.proj(alignment_event_type='event_type') # event type to align to
+    alignment_time_shift: float                      # (s) WRT alignment_event_type
+    -> EventType.proj(start_event_type='event_type') # event before alignment_event_type
+    start_time_shift: float                          # (s) WRT start_event_type
+    -> EventType.proj(end_event_type='event_type')   # event after alignment_event_type
+    end_time_shift: float                            # (s) WRT end_event_type
     """
+    # WRT - with respect to
