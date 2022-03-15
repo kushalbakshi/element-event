@@ -3,7 +3,7 @@
 import datajoint as dj
 import inspect
 import importlib
-import event
+from . import event
 
 
 schema = dj.schema()
@@ -49,7 +49,7 @@ def activate(trial_schema_name, event_schema_name, *, create_schema=True, create
 class Block(dj.Imported):
     definition = """ Experimental blocks
     -> event.BehaviorRecording
-    block : smallint 		# block number
+    block_id : smallint 		# block number (1-based indexing)
     ---
     block_start_time : decimal(10, 4)  # (s) relative to recording start
     """
@@ -71,16 +71,17 @@ class TrialType(dj.Lookup):
     trial_type_description  : varchar(256)
     """
 
-
+    trial_type_description='' : varchar(256)
+    """
 @schema
 class Trial(dj.Imported):
     definition = """  # Experimental trials
     -> event.BehaviorRecording
-    trial      : smallint # trial number (1-based indexing)
+    trial_id      : smallint # trial number (1-based indexing)
     ---
     -> TrialType
-    start_time : float  # (second) relative to recording start
-    stop_time  : float  # (second) relative to recording start
+    trial_start_time : float  # (second) relative to recording start
+    trial_stop_time  : float  # (second) relative to recording start
     """
 
     class TrialAttribute(dj.Part):
