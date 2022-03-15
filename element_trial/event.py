@@ -93,7 +93,7 @@ class BehaviorRecording(dj.Manual):
     ---
     recording_start_time=null : datetime
     recording_duration=null   : float
-    recording_notes=null      : varchar(256)
+    recording_notes=''     : varchar(256)
     """
 
     class File(dj.Part):
