@@ -15,12 +15,9 @@ next, Sessions are directly upstream from both Trials and Events. This might be 
 that models combining this Element with the corresponding 
 [Element-Session](https://github.com/datajoint/element-session).
 
-### Trial Schema
+### Trial & Event Schemas
 
-![trial schema](./images/diagram_trial.svg)
-
-### Event Schema
-![event schema](./images/diagram_event.svg)
+![trial and event schemas](./images/trial_event_diagram.svg)
 
 ## Installation
 
