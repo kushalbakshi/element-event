@@ -55,8 +55,10 @@ Element-Session](https://github.com/datajoint/element-session)).
 [example definitions here](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/paths.py)
 
 For more detail, check the docstring of the `element-trial`:
+
 ```python
-from element_trial import event, trial
+from element_event import event, trial
+
 help(event.activate)
 help(trial.activate)
 ```
