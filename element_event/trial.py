@@ -132,7 +132,10 @@ def get_trialized_alignment_event_times(alignment_event_key, trial_restriction):
             alignment_event_time = alignment_event_time.fetch(
                 'event_start_time', order_by='event_start_time DESC', limit=1)[0]
         else:
-            alignment_times.append({**trial_key, 'start': None, 'event': None, 'end': None})
+            alignment_times.append({'trial_key': trial_key,
+                                    'start': None,
+                                    'event': None,
+                                    'end': None})
             continue
 
         alignment_start_time = (event.Event & session_key & {'event_type': alignment_spec['start_event_type']}
