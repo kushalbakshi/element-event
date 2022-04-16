@@ -9,7 +9,7 @@ In both of the following diagrams, the trial table starts immediately downstream
 ***Session***. In one case, Sessions are first segmented into trials, and then 
 segmented into events. This might be appropriate, for example, in a paradigm with 
 repeated conditions and response behaviors associated with different conditions. In the 
-next, Sessions are directly upstream from both Trials and Events. This might be appropropriate for a paradigm that recorded events within naturalistic free behavior. We  provide an
+next, Sessions are directly upstream from both Trials and Events. This might be appropriate for a paradigm that recorded events within naturalistic free behavior. We  provide an
 [example workflow](https://github.com/datajoint/workflow-trial/) with a
 [pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py)
 that models combining this Element with the corresponding 
