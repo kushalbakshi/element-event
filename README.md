@@ -1,7 +1,14 @@
 # DataJoint Element - Experimental trials
-This repository is a work in progress not yet ready for public release.
-It serves as a draft of a DataJoint element for trialized experiments behavior
-for our U24 initiative.
+
++ `element-event` features a DataJoint pipeline design for event, trial, and block management. 
+
++ `element-event` is not a complete workflow by itself, but rather a modular design of tables and dependencies. 
+
++ `element-event` can be flexibly attached to any DataJoint workflow.
+
++ See the [Element Event documentation](https://elements.datajoint.org/description/event/) for the background information and development timeline.
+
++ For more information on the DataJoint Elements project, please visit https://elements.datajoint.org.  This work is supported by the National Institutes of Health.
 
 ## Element architecture
 
