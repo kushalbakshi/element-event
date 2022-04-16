@@ -1,7 +1,7 @@
 # DataJoint Element - Experimental trials
 This repository is a work in progress not yet ready for public release.
 It serves as a draft of a DataJoint element for trialized experiments behavior
-for our U24 itiative.
+for our U24 initiative.
 
 ## Element architecture
 
