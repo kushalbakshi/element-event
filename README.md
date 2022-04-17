@@ -68,6 +68,14 @@ help(event.activate)
 help(trial.activate)
 ```
 
+### Element usage
+
++ See the 
+[workflow-calcium-imaging](https://github.com/datajoint/workflow-calcium-imaging), 
+[workflow-array-ephys](https://github.com/datajoint/workflow-array-ephys), and 
+[workflow-miniscope](https://github.com/datajoint/workflow-miniscope) 
+repositories for example usages of `element-event`.
+
 ## Citation
 
 + If your work uses DataJoint and DataJoint Elements, please cite the respective Research Resource Identifiers (RRIDs) and manuscripts.
