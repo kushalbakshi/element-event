@@ -125,10 +125,13 @@ def get_trialized_alignment_event_times(alignment_event_key, trial_restriction):
 
     alignment_times = []
     for trial_key, trial_start, trial_stop in zip(trial_keys, trial_starts, trial_ends):
-        alignment_event_time = (event.Event & session_key & {'event_type': alignment_spec['alignment_event_type']}
-                                & f'event_start_time BETWEEN {trial_start} AND {trial_stop}')
+        alignment_event_time = (event.Event & session_key
+                                & {'event_type': alignment_spec['alignment_event_type']}
+                                # Needed space after BETWEEN otherwise SQL err
+                                & ('event_start_time BETWEEN '
+                                   + f'{trial_start} AND {trial_stop}'))
         if alignment_event_time:
-            # if there are multiple of such alignment event, pick the last one in the trial
+            # if  multiple alignment events, pick the last one in the trial
             alignment_event_time = alignment_event_time.fetch(
                 'event_start_time', order_by='event_start_time DESC', limit=1)[0]
         else:
@@ -138,20 +141,22 @@ def get_trialized_alignment_event_times(alignment_event_key, trial_restriction):
                                     'end': None})
             continue
 
-        alignment_start_time = (event.Event & session_key & {'event_type': alignment_spec['start_event_type']}
+        alignment_start_time = (event.Event & session_key
+                                & {'event_type': alignment_spec['start_event_type']}
                                 & f'event_start_time < {alignment_event_time}')
         if alignment_start_time:
-            # if there are multiple of such start event, pick the most immediate one prior to the alignment event
+            # if multiple start events, pick most immediate prior alignment event
             alignment_start_time = alignment_start_time.fetch(
                 'event_start_time', order_by='event_start_time DESC', limit=1)[0]
             alignment_start_time = max(alignment_start_time, trial_start)
         else:
             alignment_start_time = trial_start
 
-        alignment_end_time = (event.Event & session_key & {'event_type': alignment_spec['end_event_type']}
+        alignment_end_time = (event.Event & session_key
+                              & {'event_type': alignment_spec['end_event_type']}
                               & f'event_start_time > {alignment_event_time}')
         if alignment_end_time:
-            # if there are multiple of such start event, pick the most immediate one following the alignment event
+            # if multiple of such start event, pick most immediate after alignment event
             alignment_end_time = alignment_end_time.fetch(
                 'event_start_time', order_by='event_start_time', limit=1)[0]
             alignment_end_time = min(alignment_end_time, trial_stop)
