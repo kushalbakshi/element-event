@@ -66,6 +66,9 @@ class Block(dj.Imported):
         attribute_value   : varchar(2000)
         """
 
+    def make(self, key):
+        raise NotImplementedError
+
 
 @schema
 class TrialType(dj.Lookup):
@@ -94,6 +97,9 @@ class Trial(dj.Imported):
         ---
         attribute_value : varchar(2000)
         """
+
+    def make(self, key):
+        raise NotImplementedError
 
 
 @schema

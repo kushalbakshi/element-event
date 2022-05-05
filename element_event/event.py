@@ -113,6 +113,9 @@ class Event(dj.Imported):
     event_end_time=null       : float  # (second) relative to recording start
     """
 
+    def make(self, key):
+        raise NotImplementedError
+
 
 """
 ----- AlignmentEvent -----
