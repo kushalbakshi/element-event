@@ -28,20 +28,20 @@ that models combining this Element with the corresponding
 
 ## Installation
 
-+ Install `element-trial`
++ Install `element-event`
     ```
-    pip install element-trial
+    pip install element-event
     ```
 
-+ Upgrade `element-trial` previously installed with `pip`
++ Upgrade `element-event` previously installed with `pip`
     ```
-    pip install --upgrade element-trial
+    pip install --upgrade element-event
     ```
 
 <!---
 + Install `element-interface`
 
-    + `element-interface` is a dependency of `element-trial`, however it is not 
+    + `element-interface` is a dependency of `element-event`, however it is not 
       contained within `requirements.txt`.
 
     ```
@@ -53,7 +53,7 @@ that models combining this Element with the corresponding
 
 ### Element activation
 
-To activate the `element-trial`, one need to provide:
+To activate the `element-event`, one need to provide:
 
 1. Schema names for the event or trial module
 2. Upstream Session table: A set of keys identifying a recording session (see [
@@ -61,7 +61,7 @@ Element-Session](https://github.com/datajoint/element-session)).
 3. Utility functions. See 
 [example definitions here](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/paths.py)
 
-For more detail, check the docstring of the `element-trial`:
+For more detail, check the docstring of the `element-event`:
 
 ```python
 from element_event import event, trial
