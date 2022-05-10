@@ -9,8 +9,9 @@ schema = dj.schema()
 _linking_module = None
 
 
-def activate(schema_name, *, create_schema=True, create_tables=True,
-             linking_module=None):
+def activate(
+    schema_name, *, create_schema=True, create_tables=True, linking_module=None
+):
     """
     activate(schema_name, *, create_schema=True, create_tables=True,
              linking_module=None)
@@ -38,12 +39,17 @@ def activate(schema_name, *, create_schema=True, create_tables=True,
     """
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
-    assert inspect.ismodule(linking_module), "The argument 'dependency' must"\
-                                             + " be a module or module name"
+    assert inspect.ismodule(linking_module), (
+        "The argument 'dependency' must" + " be a module or module name"
+    )
 
-    schema.activate(schema_name, create_schema=create_schema,
-                    create_tables=create_tables,
-                    add_objects=linking_module.__dict__)
+    schema.activate(
+        schema_name,
+        create_schema=create_schema,
+        create_tables=create_tables,
+        add_objects=linking_module.__dict__,
+    )
+
 
 # -------------- Functions required by the element-trial   ---------------
 
