@@ -109,6 +109,9 @@ class Trial(dj.Imported):
         ---
         attribute_value : varchar(2000)
         """
+        
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
 @schema
@@ -116,7 +119,10 @@ class BlockTrial(dj.Imported):
     definition = """
     -> Block
     -> Trial
-    """
+    """    
+    
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
 @schema
@@ -125,6 +131,9 @@ class TrialEvent(dj.Imported):
     -> Trial
     -> event.Event
     """
+
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
 # ---- HELPER ----

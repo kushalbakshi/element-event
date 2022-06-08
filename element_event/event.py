@@ -107,6 +107,9 @@ class BehaviorRecording(dj.Manual):
         -> master
         filepath              : varchar(64)
         """
+    
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
 @schema
@@ -118,6 +121,9 @@ class Event(dj.Imported):
     ---
     event_end_time=null       : float  # (second) relative to recording start
     """
+
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
 """
