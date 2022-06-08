@@ -81,6 +81,9 @@ class Block(dj.Imported):
         attribute_value   : varchar(2000)
         """
 
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
+
 
 @schema
 class TrialType(dj.Lookup):
@@ -109,7 +112,7 @@ class Trial(dj.Imported):
         ---
         attribute_value : varchar(2000)
         """
-        
+
     def make(self, key):
         raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
@@ -140,6 +143,20 @@ class TrialEvent(dj.Imported):
 
 
 def get_trialized_alignment_event_times(alignment_event_key, trial_restriction):
+    """
+    For the trials identified by trial_restriction, identify recording times with 
+        with respect to a given alignment_event. 
+    :param alignment_event_key: key including information from event.AlignmentEvent
+    :param trial_restriction: set or subset of trials from trial.Trial
+    
+    returns pandas dataframe with each of the following
+        trial_key: key identifying a single trial
+        start: recording time (s) of the beginning of an alignment window
+        event: recording time (s) of an alignment event within the trial. 
+               If multiple events within a trial, select the last one.
+        end:  recording time (s) of the end of an alignment window
+    """
+
     import pandas as pd
 
     session_key = (_linking_module.Session & trial_restriction).fetch1("KEY")
