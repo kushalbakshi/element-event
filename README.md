@@ -12,12 +12,10 @@
 
 ## Element architecture
 
-In both of the following diagrams, the trial table starts immediately downstream from
-***Session***. In one case, Sessions are first segmented into trials, and then segmented
-into events. This might be appropriate, for example, in a paradigm with repeated
-conditions and response behaviors associated with different conditions. In the next,
-Sessions are directly upstream from both Trials and Events. This might be appropriate
-for a paradigm that recorded events within naturalistic free behavior. We provide an
+In diagram below, ***BehaviorRecording*** table starts immediately downstream from
+***Session***. Recordings can be segmented into both trials, which are assumed to have 
+duration, and events, which may be instantaneous. Researchers may find one or both  appropriate for their particular paradigm. A set of trials can be further organized into
+blocks, representing a larger span of time. We provide an
 [example workflow](https://github.com/datajoint/workflow-trial/) with a
 [pipeline script](https://github.com/datajoint/workflow-trial/blob/main/workflow_trial/pipeline.py)
 that models combining this Element with the corresponding 
