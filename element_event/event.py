@@ -128,16 +128,14 @@ class Event(dj.Imported):
 
 """
 ----- AlignmentEvent -----
-The following `AlignmentEvent` table is designed to provide a mechanism for performing
+- The following `AlignmentEvent` table is designed to provide a mechanism for performing
 event-aligned analyses, such as Peristimulus Time Histogram (PSTH) analysis commonly
-used in electrophysiology studies. One entry in the `AlignmentEvent` table defines an
+used in electrophysiology studies.
+- One entry in the `AlignmentEvent` table defines an
 event type to align signal/activity timeseries to. 
-
-Start and end event types define the beginning and end of a data window time_shift is
-seconds of adjustment with respect to the alignment variable, or the beginning/end of
-the window via start/end event types.
-
-To use entries from trial.Trial, trial_start_time and trial_end_time must be entered in
+- Start and end event types define the beginning and end of a data window
+- time_shift is seconds of adjustment with respect to the alignment variable, or the beginning/end of the window via start/end event types.
+- To use entries from trial.Trial, trial_start_time and trial_end_time must be entered in
 the Event table.
 """
 
