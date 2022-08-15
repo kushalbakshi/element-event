@@ -76,7 +76,7 @@ class Block(dj.Imported):
     class Attribute(dj.Part):
         definition = """  # Additional block attributes to fully describe a block
         -> master
-        attribute_name    : varchar(64)
+        attribute_name    : varchar(32)
         ---
         attribute_value   : varchar(2000)
         """
@@ -108,7 +108,7 @@ class Trial(dj.Imported):
     class Attribute(dj.Part):
         definition = """  # Additional trial attributes to fully describe a trial
         -> master
-        attribute_name  : varchar(64)
+        attribute_name  : varchar(32)
         ---
         attribute_value : varchar(2000)
         """
