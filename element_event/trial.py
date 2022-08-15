@@ -76,7 +76,7 @@ class Block(dj.Imported):
     class Attribute(dj.Part):
         definition = """  # Additional block attributes to fully describe a block
         -> master
-        attribute_name    : varchar(16)
+        attribute_name    : varchar(32)
         ---
         attribute_value   : varchar(2000)
         """
@@ -100,7 +100,7 @@ class Trial(dj.Imported):
     -> event.BehaviorRecording
     trial_id            : smallint # trial number (1-based indexing)
     ---
-    -> TrialType
+    -> [nullable] TrialType
     trial_start_time    : float  # (second) relative to recording start
     trial_stop_time     : float  # (second) relative to recording start
     """
@@ -108,7 +108,7 @@ class Trial(dj.Imported):
     class Attribute(dj.Part):
         definition = """  # Additional trial attributes to fully describe a trial
         -> master
-        attribute_name  : varchar(16)
+        attribute_name  : varchar(32)
         ---
         attribute_value : varchar(2000)
         """
