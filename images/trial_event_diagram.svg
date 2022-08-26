@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="654pt" height="256pt" viewBox="0.00 0.00 654.00 256.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 252)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-252 650,-252 650,4 -4,4"/>
+<!-- 10 -->
+<g id="node1" class="node">
+<title>10</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="46" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="46" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800" fill-opacity="0.501961">10</text>
+</g>
+<!-- event.AlignmentEvent -->
+<g id="node14" class="node">
+<title>event.AlignmentEvent</title>
+<g id="a_node14"><a xlink:title="alignment_name       ------------------------------alignment_description=&quot;&quot; → event.EventType.proj(alignment_event_type=&quot;event_type&quot;)alignment_time_shift → event.EventType.proj(start_event_type=&quot;event_type&quot;)start_time_shift     → event.EventType.proj(end_event_type=&quot;event_type&quot;)end_time_shift       ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="134,-35 0,-35 0,0 134,0 134,-35"/>
+<text text-anchor="start" x="8" y="-15.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">event.AlignmentEvent</text>
+</a>
+</g>
+</g>
+<!-- 10&#45;&gt;event.AlignmentEvent -->
+<g id="edge1" class="edge">
+<title>10-&gt;event.AlignmentEvent</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M46.36,-86.3C48.18,-80.33 56.41,-53.29 61.91,-35.22"/>
+</g>
+<!-- 9 -->
+<g id="node2" class="node">
+<title>9</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="82" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="82" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800" fill-opacity="0.501961">9</text>
+</g>
+<!-- 9&#45;&gt;event.AlignmentEvent -->
+<g id="edge2" class="edge">
+<title>9-&gt;event.AlignmentEvent</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M81.74,-86.3C80.44,-80.33 74.56,-53.29 70.63,-35.22"/>
+</g>
+<!-- 11 -->
+<g id="node3" class="node">
+<title>11</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="118" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="118" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800" fill-opacity="0.501961">11</text>
+</g>
+<!-- 11&#45;&gt;event.AlignmentEvent -->
+<g id="edge3" class="edge">
+<title>11-&gt;event.AlignmentEvent</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M117.28,-86.52C113.21,-81.02 92.83,-53.45 79.3,-35.14"/>
+</g>
+<!-- trial.Block.Attribute -->
+<g id="node4" class="node">
+<title>trial.Block.Attribute</title>
+<g id="a_node4"><a xlink:title="→ trial.Blockattribute_name       ------------------------------attribute_value      ">
+<polygon fill="transparent" stroke="transparent" points="646,-27 546,-27 546,-8 646,-8 646,-27"/>
+<text text-anchor="start" x="554" y="-16" font-family="arial" text-decoration="underline" font-size="10.00">trial.Block.Attribute</text>
+</a>
+</g>
+</g>
+<!-- trial.TrialType -->
+<g id="node5" class="node">
+<title>trial.TrialType</title>
+<g id="a_node5"><a xlink:title="trial_type           ------------------------------trial_type_description=&quot;&quot; ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="transparent" points="367.5,-177 292.5,-177 292.5,-142 367.5,-142 367.5,-177"/>
+<text text-anchor="start" x="300.5" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">trial.TrialType</text>
+</a>
+</g>
+</g>
+<!-- trial.Trial -->
+<g id="node7" class="node">
+<title>trial.Trial</title>
+<g id="a_node7"><a xlink:title="→ event.BehaviorRecordingtrial_id             ------------------------------→ trial.TrialTypetrial_start_time     trial_stop_time      ">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="333" cy="-88.5" rx="38.5" ry="17.5"/>
+<text text-anchor="start" x="310" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.Trial</text>
+</a>
+</g>
+</g>
+<!-- trial.TrialType&#45;&gt;trial.Trial -->
+<g id="edge4" class="edge">
+<title>trial.TrialType-&gt;trial.Trial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M330.73,-141.8C331.2,-130.95 331.81,-116.87 332.28,-106.05"/>
+</g>
+<!-- event.EventType -->
+<g id="node6" class="node">
+<title>event.EventType</title>
+<g id="a_node6"><a xlink:title="event_type           ------------------------------event_type_description=&quot;&quot; ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="transparent" points="145,-177 55,-177 55,-142 145,-142 145,-177"/>
+<text text-anchor="start" x="63" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">event.EventType</text>
+</a>
+</g>
+</g>
+<!-- event.EventType&#45;&gt;10 -->
+<g id="edge6" class="edge">
+<title>event.EventType-&gt;10</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M86.93,-141.8C72.94,-123.93 52.1,-97.29 47.1,-90.91"/>
+</g>
+<!-- event.EventType&#45;&gt;9 -->
+<g id="edge5" class="edge">
+<title>event.EventType-&gt;9</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M95.64,-141.8C90.98,-123.93 84.03,-97.29 82.37,-90.91"/>
+</g>
+<!-- event.EventType&#45;&gt;11 -->
+<g id="edge7" class="edge">
+<title>event.EventType-&gt;11</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M104.36,-141.8C109.02,-123.93 115.97,-97.29 117.63,-90.91"/>
+</g>
+<!-- event.Event -->
+<g id="node12" class="node">
+<title>event.Event</title>
+<g id="a_node12"><a xlink:title="→ event.BehaviorRecording→ event.EventTypeevent_start_time     ------------------------------event_end_time=null  ">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="210" cy="-88.5" rx="50" ry="17.5"/>
+<text text-anchor="start" x="178" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="#00007f" fill-opacity="0.627451">event.Event</text>
+</a>
+</g>
+</g>
+<!-- event.EventType&#45;&gt;event.Event -->
+<g id="edge8" class="edge">
+<title>event.EventType-&gt;event.Event</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M126.35,-141.97C144.78,-130.41 169.17,-115.11 186.85,-104.02"/>
+</g>
+<!-- trial.TrialEvent -->
+<g id="node8" class="node">
+<title>trial.TrialEvent</title>
+<g id="a_node8"><a xlink:title="→ trial.Trial→ event.Event">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="210" cy="-17.5" rx="58.25" ry="17.5"/>
+<text text-anchor="middle" x="210" y="-14.4" font-family="arial" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.TrialEvent</text>
+</a>
+</g>
+</g>
+<!-- trial.Trial&#45;&gt;trial.TrialEvent -->
+<g id="edge9" class="edge">
+<title>trial.Trial-&gt;trial.TrialEvent</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M309.58,-74.36C288.66,-62.63 258.07,-45.47 236.32,-33.27"/>
+</g>
+<!-- trial.BlockTrial -->
+<g id="node9" class="node">
+<title>trial.BlockTrial</title>
+<g id="a_node9"><a xlink:title="→ trial.Block→ trial.Trial">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="463" cy="-17.5" rx="57.5" ry="17.5"/>
+<text text-anchor="middle" x="463" y="-14.4" font-family="arial" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.BlockTrial</text>
+</a>
+</g>
+</g>
+<!-- trial.Trial&#45;&gt;trial.BlockTrial -->
+<g id="edge10" class="edge">
+<title>trial.Trial-&gt;trial.BlockTrial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M357.15,-74.68C379.32,-62.91 412.17,-45.48 435.38,-33.16"/>
+</g>
+<!-- trial.Trial.Attribute -->
+<g id="node10" class="node">
+<title>trial.Trial.Attribute</title>
+<g id="a_node10"><a xlink:title="→ trial.Trialattribute_name       ------------------------------attribute_value      ">
+<polygon fill="transparent" stroke="transparent" points="380,-27 286,-27 286,-8 380,-8 380,-27"/>
+<text text-anchor="start" x="294" y="-16" font-family="arial" text-decoration="underline" font-size="10.00">trial.Trial.Attribute</text>
+</a>
+</g>
+</g>
+<!-- trial.Trial&#45;&gt;trial.Trial.Attribute -->
+<g id="edge11" class="edge">
+<title>trial.Trial-&gt;trial.Trial.Attribute</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M333,-70.8C333,-57.08 333,-38.19 333,-27.27"/>
+</g>
+<!-- event.BehaviorRecording -->
+<g id="node11" class="node">
+<title>event.BehaviorRecording</title>
+<g id="a_node11"><a xlink:title="→ Session------------------------------recording_start_time=null recording_duration=null recording_notes=&quot;&quot;   ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="538,-177 386,-177 386,-142 538,-142 538,-177"/>
+<text text-anchor="middle" x="462" y="-156.4" font-family="arial" font-size="12.00" fill="darkgreen">event.BehaviorRecording</text>
+</a>
+</g>
+</g>
+<!-- event.BehaviorRecording&#45;&gt;trial.Trial -->
+<g id="edge12" class="edge">
+<title>event.BehaviorRecording-&gt;trial.Trial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M431.1,-141.97C408.44,-129.85 378.11,-113.63 357.2,-102.44"/>
+</g>
+<!-- event.BehaviorRecording&#45;&gt;event.Event -->
+<g id="edge13" class="edge">
+<title>event.BehaviorRecording-&gt;event.Event</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M401.64,-141.97C353.88,-128.9 288.66,-111.04 247.96,-99.89"/>
+</g>
+<!-- event.BehaviorRecording.File -->
+<g id="node13" class="node">
+<title>event.BehaviorRecording.File</title>
+<g id="a_node13"><a xlink:title="→ event.BehaviorRecordingfilepath             ">
+<polygon fill="transparent" stroke="transparent" points="534.5,-98 389.5,-98 389.5,-79 534.5,-79 534.5,-98"/>
+<text text-anchor="start" x="397.5" y="-87" font-family="arial" text-decoration="underline" font-size="10.00">event.BehaviorRecording.File</text>
+</a>
+</g>
+</g>
+<!-- event.BehaviorRecording&#45;&gt;event.BehaviorRecording.File -->
+<g id="edge14" class="edge">
+<title>event.BehaviorRecording-&gt;event.BehaviorRecording.File</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M462,-141.8C462,-128.08 462,-109.19 462,-98.27"/>
+</g>
+<!-- trial.Block -->
+<g id="node16" class="node">
+<title>trial.Block</title>
+<g id="a_node16"><a xlink:title="→ event.BehaviorRecordingblock_id             ------------------------------block_start_time     block_stop_time      ">
+<ellipse fill="#00007f" fill-opacity="0.250980" stroke="#00007f" stroke-opacity="0.250980" cx="596" cy="-88.5" rx="43.25" ry="17.5"/>
+<text text-anchor="start" x="569.5" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="#00007f" fill-opacity="0.627451">trial.Block</text>
+</a>
+</g>
+</g>
+<!-- event.BehaviorRecording&#45;&gt;trial.Block -->
+<g id="edge15" class="edge">
+<title>event.BehaviorRecording-&gt;trial.Block</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M494.1,-141.97C517.48,-129.93 548.73,-113.84 570.43,-102.66"/>
+</g>
+<!-- event.Event&#45;&gt;trial.TrialEvent -->
+<g id="edge16" class="edge">
+<title>event.Event-&gt;trial.TrialEvent</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M210,-70.8C210,-59.95 210,-45.87 210,-35.05"/>
+</g>
+<!-- Session -->
+<g id="node15" class="node">
+<title>Session</title>
+<g id="a_node15"><a xlink:title="→ `cbroz_subject`.`subject`session_datetime     ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="492,-248 432,-248 432,-213 492,-213 492,-248"/>
+<text text-anchor="start" x="440" y="-228.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">Session</text>
+</a>
+</g>
+</g>
+<!-- Session&#45;&gt;event.BehaviorRecording -->
+<g id="edge17" class="edge">
+<title>Session-&gt;event.BehaviorRecording</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.250980" d="M462,-212.8C462,-201.95 462,-187.87 462,-177.05"/>
+</g>
+<!-- trial.Block&#45;&gt;trial.Block.Attribute -->
+<g id="edge18" class="edge">
+<title>trial.Block-&gt;trial.Block.Attribute</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M596,-70.8C596,-57.08 596,-38.19 596,-27.27"/>
+</g>
+<!-- trial.Block&#45;&gt;trial.BlockTrial -->
+<g id="edge19" class="edge">
+<title>trial.Block-&gt;trial.BlockTrial</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M570.36,-74.2C547.56,-62.37 514.31,-45.12 490.86,-32.95"/>
+</g>
+</g>
+</svg>

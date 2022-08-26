@@ -9,8 +9,9 @@ schema = dj.schema()
 _linking_module = None
 
 
-def activate(schema_name, *, create_schema=True, create_tables=True,
-             linking_module=None):
+def activate(
+    schema_name, *, create_schema=True, create_tables=True, linking_module=None
+):
     """
     activate(schema_name, *, create_schema=True, create_tables=True,
              linking_module=None)
@@ -38,12 +39,17 @@ def activate(schema_name, *, create_schema=True, create_tables=True,
     """
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
-    assert inspect.ismodule(linking_module), "The argument 'dependency' must"\
-                                             + " be a module or module name"
+    assert inspect.ismodule(linking_module), (
+        "The argument 'dependency' must" + " be a module or module name"
+    )
 
-    schema.activate(schema_name, create_schema=create_schema,
-                    create_tables=create_tables,
-                    add_objects=linking_module.__dict__)
+    schema.activate(
+        schema_name,
+        create_schema=create_schema,
+        create_tables=create_tables,
+        add_objects=linking_module.__dict__,
+    )
+
 
 # -------------- Functions required by the element-trial   ---------------
 
@@ -113,17 +119,21 @@ class Event(dj.Imported):
     event_end_time=null       : float  # (second) relative to recording start
     """
 
+    def make(self, key):
+        raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
+
 
 """
 ----- AlignmentEvent -----
-The following `AlignmentEvent` table is designed to provide a mechanism for
-performing event-aligned analyses, such as Peristimulus Time Histogram (PSTH) analysis 
-commonly used in electrophysiology studies.
-One entry in the `AlignmentEvent` table defines an event type to align signal/activity
-    timeseries to.
-Start and end event types define the beginning and end of a data window
-time_shift is seconds of adjustment with respect to the alignment variable, or the
-    beginning/end of the window via start/end event types
+- The following `AlignmentEvent` table is designed to provide a mechanism for performing
+event-aligned analyses, such as Peristimulus Time Histogram (PSTH) analysis commonly
+used in electrophysiology studies.
+- One entry in the `AlignmentEvent` table defines an
+event type to align signal/activity timeseries to. 
+- Start and end event types define the beginning and end of a data window
+- time_shift is seconds of adjustment with respect to the alignment variable, or the beginning/end of the window via start/end event types.
+- To use entries from trial.Trial, trial_start_time and trial_end_time must be entered in
+the Event table.
 """
 
 
