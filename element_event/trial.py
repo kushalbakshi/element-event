@@ -78,8 +78,9 @@ class Block(dj.Imported):
         -> master
         attribute_name    : varchar(32)
         ---
-        attribute_value   : varchar(2000)
-        """
+        attribute_value='': varchar(2000)
+        attribute_blob=null: longblob
+        """   
 
     def make(self, key):
         raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
@@ -110,8 +111,9 @@ class Trial(dj.Imported):
         -> master
         attribute_name  : varchar(32)
         ---
-        attribute_value : varchar(2000)
-        """
+        attribute_value='': varchar(2000)
+        attribute_blob=null: longblob
+        """   
 
     def make(self, key):
         raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
