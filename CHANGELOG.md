@@ -19,3 +19,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Table architecture
 + AlignmentEvent design to capture windows relative to an event
 + Adopted black formatting into code base
+
+[0.1.2]: https://github.com/datajoint/element-event/releases/tag/0.1.0
+[0.1.1]: https://github.com/datajoint/element-event/releases/tag/0.1.0
+[0.1.0]: https://github.com/datajoint/element-event/releases/tag/0.1.0
