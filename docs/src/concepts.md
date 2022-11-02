@@ -21,6 +21,7 @@ DataJoint has partnered with the following teams to interview key members, and d
 
 ## Element Features
 Features of Element Event include:
+
 * Pairing of upstream sessions with behavioral recordings
 * Multiple recorded attributes for phases of interest (see Attribute part tables for Block and Trial)
 * Defining Trial and Event Types as lookup tables
@@ -73,7 +74,7 @@ Each node in the following diagram represents the analysis code in the workflow 
 
 In addition to the key projects listed above, the DataJoint team met with leaders from both [Neurodata Without Borders](https://www.nwb.org/) and the [Kepecs Lab](https://sites.wustl.edu/kepecslab/), as these groups have both tackled the difficulty of developing ontologies that can cover all possible iterations of behavioral data collection. Our resulting structure is exemplified by the figure below. The language below is tailored to the dependent variable in many neuroscience experiments, behavior.
 
-![Example Neuroscience Experiment Structure](event_experiment_structure.jpg)
+![Example Neuroscience Experiment Structure](https://raw.githubusercontent.com/datajoint/element-event/main/images/event_experimental_structure.png)
 
 * A **Session** is period during which data is collected.
 * A **Recording** is some source of data tied to a single modality (e.g., behavior). This may or may not fully capture the session depending on recording latencies or equipment malfunctions.
