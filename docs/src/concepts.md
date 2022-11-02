@@ -5,7 +5,7 @@ Event- & trial-based experiments have an extensive history in behavioral and cog
 
 ## Event and Trial Time Locking in Neurophysiology
 
-Event-related potentials (ERPs) are a form of measurement associated with neural signal activity. Typical neural signal patterns are continuous recordings lasting for the duration of a recording session. ERPs are short segmented chunks of neural signals that are time locked to particular events of experimental interest. These segmented chunks can then be stored across all occurences of a particular event and then can be averaged across all related trials containing the event type. Typical common events of interest include stimlus or trial onset and motor response onsets(button press, eye movements, lever licks). ERPs can ultimately be used to identify patterns of neural activity associated with the responses to the events of interest. 
+Event-related potentials (ERPs) are a form of measurement associated with electrophysiological neural signal activity. Typical neural signal patterns are continuous recordings lasting for the duration of a recording session. ERPs are short segmented chunks of neural signals that are time locked to particular events of experimental interest. These segmented chunks can then be stored across all occurences of a particular event and then can be averaged across all related trials containing the event type. Typical common events of interest include stimlus or trial onset and motor response onsets(button press, eye movements, lever licks). ERPs can ultimately be used to identify patterns of neural activity associated with the responses to the events of interest. 
 
 
 ## Key Partnerships
@@ -89,6 +89,7 @@ Features of Element Event include:
 * Multiple recorded attributes for phases of interest (see Attribute part tables for Block and Trial)
 * Defining Trial and Event Types as lookup tables
 * Optionally activating only the event schema for event-based recording, without Trial and Block phases.
-* An AlignmentEvent table to define the window of interest relative to specific event types.
+* An AlignmentEvent table to define the window of interest relative to specific event types, such as Peristimulus Time Histogram (PSTH) analysis commonly used in electrophysiology studies.
+
 
 
