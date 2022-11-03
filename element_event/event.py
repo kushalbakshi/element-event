@@ -109,6 +109,7 @@ class BehaviorRecording(dj.Manual):
     """Behavior Recordings
 
     Attributes:
+        Session (foreign key): Session primary key.
         recording_start_time (datetime): Start time of recording.
         recording_duration (float): Duration of recording.
         recording_notes ( varchar(256) ): Optional recording related notes.
@@ -127,7 +128,7 @@ class BehaviorRecording(dj.Manual):
 
         Attributes:
             BehaviorRecording (foreign key): Behavior recording primary key.
-            file_path ( varchar(255) ): file path of video, relative to root data dir.
+            filepath ( varchar(64) ): file path of video, relative to root data dir.
         """
 
         definition = """

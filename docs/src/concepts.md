@@ -52,17 +52,6 @@ during a **Session**.
 duration of subject behavior)
 - **Events** may occur during other categories, or during continuously recorded behavior.
 
-Features of Element Event include:
-
-- Pairing of upstream sessions with behavioral recordings
-- Multiple recorded attributes for phases of interest (see Attribute part tables for
-Block and Trial)
-- Defining Trial and Event Types as lookup tables
-- Optionally activating only the event schema for event-based recording, without Trial
-and Block phases.
-- An AlignmentEvent table to define the window of interest relative to specific event
-types, such as Peristimulus Time Histogram (PSTH) analysis commonly used in
-electrophysiology studies.
 
 ## Key Partnerships
 
@@ -128,7 +117,7 @@ Tables related to event related data storage
 
 ### `trial` schema ([API docs](../api/element_event/trial))
 
-Tables related to Session models and pose estimation. The `model` can be used without the `train` schema.
+Tables related to Session trials. 
 
 | Table | Description                                                        |
 |  ---  |    ---                                                             |
