@@ -30,12 +30,12 @@ def activate(
                       To supply from element-lab add `Experimenter = lab.User`
                       to your `workflow/pipeline.py` before `session.activate()`
     Functions:
-        get_experiment_root_data_dir(): Retrieve the root data director(y/ies) with 
-                                        behavioral recordings (e.g., bpod files) for 
+        get_experiment_root_data_dir(): Retrieve the root data director(y/ies) with
+                                        behavioral recordings (e.g., bpod files) for
                                         all subject/sessions, returns a string for
                                         full path to the root data directory.
-        get_session_directory(session_key: dict): Retrieve the session directory 
-                                                containing the recording(s) for a 
+        get_session_directory(session_key: dict): Retrieve the session directory
+                                                containing the recording(s) for a
                                                 given Session, returns a string for
                                                 full path to the session directory
     """
@@ -62,20 +62,26 @@ def get_experiment_root_data_dir() -> list:
 
     It is recommended that all paths in DataJoint Elements stored as relative
     paths, with respect to some user-configured "root" director(y/ies). The
-    root(s) may vary between data modalities and user machines. Returns a 
-    full path string to behavioral root data directory or list of strings 
+    root(s) may vary between data modalities and user machines. Returns a
+    full path string to behavioral root data directory or list of strings
     for possible root data directories.
+
+    Returns:
+        Paths (list): List of path(s) to root directories for event data
     """
     return _linking_module.get_experiment_root_data_dir()
 
 
 def get_session_directory(session_key: dict) -> str:
-    """Pulls relative function from parent namespace. 
+    """Pulls relative function from parent namespace.
 
     Retrieves the session directory containing the recorded data for a given
     Session. Returns a string for full path to the session directory.
+
+    Returns:
+        Session_dir (str): Relative path to session directory
     """
-  
+
     return _linking_module.get_session_directory(session_key)
 
 
@@ -87,9 +93,10 @@ class EventType(dj.Lookup):
     """Set of unique events present within a recording session
 
     Attributes:
-    event_type ( varchar(16) ): Unique event type.
-    event_type_description ( varchar(256) ): Event type description.
+        event_type ( varchar(16) ): Unique event type.
+        event_type_description ( varchar(256) ): Event type description.
     """
+
     definition = """
     event_type                : varchar(16)
     ---
@@ -99,14 +106,14 @@ class EventType(dj.Lookup):
 
 @schema
 class BehaviorRecording(dj.Manual):
-    """Behavior Recordings 
+    """Behavior Recordings
 
     Attributes:
-    recording_start_time (datetime): Start time of recording. 
-    recording_duration (float): Duration of recording. 
-    recording_notes ( varchar(256) ): Optional recording related notes.
-
+        recording_start_time (datetime): Start time of recording.
+        recording_duration (float): Duration of recording.
+        recording_notes ( varchar(256) ): Optional recording related notes.
     """
+
     definition = """
     -> Session
     ---
@@ -122,6 +129,7 @@ class BehaviorRecording(dj.Manual):
             BehaviorRecording (foreign key): Behavior recording primary key.
             file_path ( varchar(255) ): file path of video, relative to root data dir.
         """
+
         definition = """
         -> master
         filepath              : varchar(64)
@@ -132,12 +140,14 @@ class BehaviorRecording(dj.Manual):
 class Event(dj.Imported):
     """Automated table with event related information
 
+    WRT: With respect to
+
     Attributes:
         BehaviorRecording (foreign key): Behavior recording primary key.
         EventType (foreign key): EventType primary key.
-        event_start_time (float): Time of event onset (seconds) relative to recording start.
-        event_end_time (float): Optional. (seconds) relative to recording start.
-        """
+        event_start_time (float): Time of event onset in seconds, WRT recording start.
+        event_end_time (float): Optional. Seconds WRT recording start.
+    """
 
     definition = """
     -> BehaviorRecording
@@ -148,29 +158,29 @@ class Event(dj.Imported):
     """
 
     def make(self, key):
-        """.populate() method will launch evaluation for each unique entry in BehaviorRecording
-            and EventType.
-        """
+        """Populate base don unique entries in BehaviorRecording and EventType."""
         raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
+
 
 @schema
 class AlignmentEvent(dj.Manual):
     """Table designed to provide a mechanism for performing event-aligned analyses
 
-    To use entries from trial.Trial, trial_start_time and trial_end_time must be entered in 
-    the Event table.
+    To use entries from trial.Trial, trial_start_time and trial_end_time must be entered
+    in the Event table. WRT = With respect to
 
     Attributes
         alignment_name ( varchar(32) ): Unique alignment name.
         alignment_description ( varchar(1000) ): Optional. Longer description.
-        EventType.proj(alignment_event_type='event_type')(foreign key): Event type to align to.
-        alignment_time_shift(float): (seconds) with respect to alignment_event_type
-        EventType.proj(start_event_type='event_type')(foreign key): Event before alignment event type
-        start_time_shift(float): (seconds) with respect to start_event_type
-        EventType.proj(end_event_type='event_type')(foreign key): Event after alignment event type 
-        end_time_shift(float): (seconds) with respect to end_event_type
+        alignment_event_type (foreign key): Event type to align to.
+        alignment_time_shift (float): Seconds WRT alignment_event_type
+        start_event_type (foreign key): Event before alignment event type
+        start_time_shift (float): Seconds WRT start_event_type
+        end_event_type (foreign key): Event after alignment event type
+        end_time_shift (float): Seconds WRT end_event_type
 
     """
+
     definition = """ # time_shift is seconds to shift with respect to (WRT) a variable
     alignment_name: varchar(32)
     ---

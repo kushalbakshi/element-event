@@ -9,3 +9,4 @@ Resource Identifier (RRID).
 
 + DataJoint Elements ([RRID:SCR_021894](https://scicrunch.org/resolver/SCR_021894)) -
   Element Event (version {{PATCH_VERSION}})
+  
