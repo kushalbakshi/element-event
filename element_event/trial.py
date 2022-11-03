@@ -78,6 +78,7 @@ class Block(dj.Imported):
     """Set of experimental blocks within a recording session
 
     Attributes
+        event.BehaviorRecording (foreign key): event.BehaviorRecording primary key.
         block_id (smallint): block number (1-based indexing)
         block_start_time (float): Seconds relative to recording start
         block_stop_time (float): Seconds relative to recording stop
@@ -94,10 +95,11 @@ class Block(dj.Imported):
     class Attribute(dj.Part):
         """Extra Block attributes to fully describe a block
 
-        Attributes
-        attribute_name ( varchar(32) ): Name of block attribute
-        attribute_value ( varchar(2000) ): Optional. Block attribute value
-        attribute_blob (longblob): Optional. Block attribute numerical numerical data
+        Attributes:
+             Block (foreign key): Block table primary key. 
+             attribute_name ( varchar(32) ): Name of block attribute
+             attribute_value ( varchar(2000) ): Optional. Block attribute value
+             attribute_blob (longblob): Optional. Block attribute numerical numerical data
         """
 
         definition = """  # Additional block attributes to fully describe a block
@@ -153,7 +155,8 @@ class Trial(dj.Imported):
     class Attribute(dj.Part):
         """Extra trial attributes to fully describe a trial
 
-        Attributes
+        Attributes:
+            Trial (foreign key): Trial table primary key.
             attribute_name ( varchar(32) ): Name of trial attribute
             attribute_value ( varchar(2000) ): Optional. Trial attribute value
             attribute_blob (longblob): Optional. Trial attribute numerical data

@@ -159,7 +159,7 @@ class Event(dj.Imported):
     """
 
     def make(self, key):
-        """Populate base don unique entries in BehaviorRecording and EventType."""
+        """Populate based on unique entries in BehaviorRecording and EventType."""
         raise NotImplementedError("For `insert`, use `allow_direct_insert=True`")
 
 
