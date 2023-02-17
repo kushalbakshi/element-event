@@ -195,7 +195,7 @@ class AlignmentEvent(dj.Manual):
     """
 
 @schema
-class BehaviorDevice(dj.Imported):
+class BehaviorTimeSeries(dj.Imported):
     definition = """
     -> event.BehaviorRecording
     device_name: varchar(16)  # e.g. joystick, lick_port
