@@ -4,7 +4,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 ## [0.2.0] - 2023-04-04
 
-+ Update - Revert `event.Event::event_start_time` and `event.Event::event_end_time` datatypes to decimal(10, 4)
++ Update - `event.Event::event_start_time` and `event.Event::event_end_time` datatypes to decimal(10, 4)
 
 ## [0.1.3] - 2022-11-02
 
