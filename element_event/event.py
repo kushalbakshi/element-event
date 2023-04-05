@@ -146,14 +146,14 @@ class Event(dj.Imported):
     Attributes:
         BehaviorRecording (foreign key): Behavior recording primary key.
         EventType (foreign key): EventType primary key.
-        event_start_time (float): Time of event onset in seconds, WRT recording start.
+        event_start_time (decimal(10, 4)): Time of event onset in seconds, WRT recording start.
         event_end_time (float): Optional. Seconds WRT recording start.
     """
 
     definition = """
     -> BehaviorRecording
     -> EventType
-    event_start_time          : float  # (second) relative to recording start
+    event_start_time          : decimal(10, 4)  # (second) relative to recording start
     ---
     event_end_time=null       : float  # (second) relative to recording start
     """
