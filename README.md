@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/element-event.svg)](http://badge.fury.io/py/element-event)
+
 # DataJoint Element - Experimental trials
 
 + `element-event` features a DataJoint pipeline design for event, trial, and block management. 
