@@ -96,7 +96,7 @@ class Block(dj.Imported):
         """Extra Block attributes to fully describe a block
 
         Attributes:
-             Block (foreign key): Block table primary key. 
+             Block (foreign key): Block table primary key.
              attribute_name ( varchar(32) ): Name of block attribute
              attribute_value ( varchar(2000) ): Optional. Block attribute value
              attribute_blob (longblob): Optional. Block attribute numerical numerical data
