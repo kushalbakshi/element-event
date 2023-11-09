@@ -2,6 +2,10 @@
 
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.3.0] - 2023-11-09
+
++ Add - `BehaviorTimeSeries` table
+
 ## [0.2.3] - 2023-06-20
 
 + Update - GitHub Actions workflows
@@ -43,6 +47,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - AlignmentEvent design to capture windows relative to an event
 + Add - Black formatting into code base
 
+[0.3.0]: https://github.com/datajoint/element-event/releases/tag/0.3.0
 [0.2.3]: https://github.com/datajoint/element-event/releases/tag/0.2.3
 [0.2.2]: https://github.com/datajoint/element-event/releases/tag/0.2.2
 [0.2.1]: https://github.com/datajoint/element-event/releases/tag/0.2.1
