@@ -194,22 +194,16 @@ class AlignmentEvent(dj.Manual):
     end_time_shift: float                            # (s) WRT end_event_type
     """
 
+
 @schema
-class BehaviorTimeSeries(dj.Imported):
+class BehaviorTimeSeries(dj.Manual):
     definition = """
-    -> event.BehaviorRecording
+    -> BehaviorRecording
     device_name: varchar(16)  # e.g. joystick, lick_port
     ---
     sample_rate: float  # (Hz)     # sampling rate of the acquired data
     behavior_timeseries: longblob  # array of device's acquired data
-    behavior_timestamps: longblob  # array of timestamps (in second) relative to the start of the BehaviorRecording
+    behavior_timestamps: longblob  # array of timestamps (in second) relative to the
+    start of the BehaviorRecording
+    timeseries_description='' : varchar(1000)   # Detailed description about the timeseries
     """
-
-    def make(self, key):
-        # from the `key`, retrieve the data directory for this session
-        # load each device csv file (joystick, lick)
-        # extract the data and timestamps
-        # shift timestamps back to the beginning of the session (subject first timestamp from the statemachine file)
-        # downsample both data and timestamps
-        # insert the data, timestamps, new fs
-        pass
