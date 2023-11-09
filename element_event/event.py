@@ -198,7 +198,7 @@ class AlignmentEvent(dj.Manual):
 @schema
 class BehaviorTimeSeries(dj.Manual):
     definition = """
-    -> event.BehaviorRecording
+    -> BehaviorRecording
     device_name                 : varchar(16)  # e.g. joystick, lick_port
     ---
     sample_rate                 : float  # (Hz)     # sampling rate of the acquired data
