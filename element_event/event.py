@@ -196,7 +196,7 @@ class AlignmentEvent(dj.Manual):
 
 
 @schema
-class BehaviorTimeSeries(dj.Manual):
+class BehaviorTimeSeries(dj.Imported):
     definition = """
     -> BehaviorRecording
     device_name                 : varchar(16)  # e.g. joystick, lick_port
@@ -206,3 +206,8 @@ class BehaviorTimeSeries(dj.Manual):
     behavior_timestamps         : longblob  # array of timestamps (in second) relative to the start of the BehaviorRecording
     timeseries_description=''   : varchar(1000)  # detailed description about the timeseries
     """
+
+    def make(self, key):
+        """Populate based on unique entries in BehaviorRecording.
+        """
+        # Write a make function to automatically ingest your timeseries data. 
