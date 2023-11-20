@@ -208,6 +208,5 @@ class BehaviorTimeSeries(dj.Imported):
     """
 
     def make(self, key):
-        """Populate based on unique entries in BehaviorRecording.
-        """
-        # Write a make function to automatically ingest your timeseries data. 
+        """Populate based on unique entries in BehaviorRecording."""
+        # Write a make function to automatically ingest your timeseries data.
