@@ -199,11 +199,11 @@ class AlignmentEvent(dj.Manual):
 class BehaviorTimeSeries(dj.Imported):
     definition = """
     -> BehaviorRecording
-    device_name                 : varchar(16)  # e.g. joystick, lick_port
+    timeseries_name             : varchar(32)  # e.g. joystick, lick_port
     ---
-    sample_rate                 : float  # (Hz)     # sampling rate of the acquired data
+    sample_rate=null            : float  # (Hz)     # sampling rate of the acquired data
     behavior_timeseries         : longblob  # array of device's acquired data
-    behavior_timestamps         : longblob  # array of timestamps (in second) relative to the start of the BehaviorRecording
+    behavior_timestamps=null    : longblob  # array of timestamps (in second) relative to the start of the BehaviorRecording
     timeseries_description=''   : varchar(1000)  # detailed description about the timeseries
     """
 
