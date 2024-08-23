@@ -2,6 +2,11 @@
 
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.2.4] - 2024-08-23
+
++ Update - EventType to varchar(32)
++ Add - `Attribute` part-table for the `Event` table
+
 ## [0.2.3] - 2023-06-20
 
 + Update - GitHub Actions workflows
