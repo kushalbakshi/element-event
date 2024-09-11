@@ -215,29 +215,17 @@ class AlignmentEvent(dj.Manual):
 
 @schema
 class BehaviorTimeSeries(dj.Imported):
-    """Table for storing timeseries data acquired during behavior recording
-
-    Attributes:
-        BehaviorRecording (foreign key): Behavior recording primary key.
-        timeseries_name (str): e.g. joystick, lick_port
-        sample_rate (float, optional): Sampling rate of the acquired data.
-        behavior_timeseries (longblob): Acquired timeseries as an array.
-        behavior_timestamps (longblob, optional): Array of timestamps (in second) relative to the start of the BehaviorRecording.
-        timeseries_description (str, optional): Detailed description about the timeseries.    
-    """
-
     definition = """
-    -> BehaviorRecording
-    timeseries_name             : varchar(32)  # e.g. joystick, lick_port
+    -> event.BehaviorRecording
     ---
-    sample_rate=null            : float  # (Hz)     # sampling rate of the acquired data
-    behavior_timeseries         : longblob  # array of device's acquired data
-    behavior_timestamps=null    : longblob  # array of timestamps (in second) relative to the start of the BehaviorRecording
-    timeseries_description=''   : varchar(1000)  # detailed description about the timeseries
+    sampling_rate=null: float         # sampling rate of the analog signal acquisition system
+    behavior_timestamps: longblob  # timestamps (s) for each analog trace
     """
 
-    def make(self, key):
-        """Populate based on unique entries in BehaviorRecording."""
-        # Write a make function to automatically ingest your timeseries data.
-
-        raise NotImplementedError("For `insert`, write your function and use `allow_direct_insert=True`")
+    class Trace(dj.Part):
+        definition = """
+        -> master
+        timeseries_name: varchar(32)  # name of the analog signal (e.g. Licks)
+        ---
+        behavior_timeseries: longblob  # signal amplitude over time
+        """
