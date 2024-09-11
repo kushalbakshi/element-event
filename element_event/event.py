@@ -225,7 +225,7 @@ class BehaviorTimeSeries(dj.Imported):
     class Trace(dj.Part):
         definition = """
         -> master
-        timeseries_name: varchar(32)  # name of the analog signal (e.g. Licks)
+        trace_name: varchar(32)  # name of the analog signal (e.g. Licks)
         ---
-        behavior_timeseries: longblob  # signal amplitude over time
+        trace: longblob  # signal amplitude over time
         """
